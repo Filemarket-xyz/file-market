@@ -58,7 +58,7 @@ jobs:
         working-directory: packages/frontend
       - name: Save artifacts
         if: ${{ needs.check-changes.outputs.frontend_changes == 'true' }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: main-frontend
           path: packages/frontend/frontend.zip
@@ -244,7 +244,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Load frontend artifacts
         if: ${{ needs.check-changes.outputs.frontend_changes == 'true' }}
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: main-frontend
       - name: Update frontend
